@@ -92,7 +92,7 @@ class BankAccountTestTransfer(unittest.TestCase):
         sender = BankAccount(100)
         receiver = BankAccount(50)
         with self.assertRaises(ValueError) as zero_value:
-            sender.transfer(receiver, 50)
+            sender.transfer(receiver, 0)
         self.assertEqual(str(zero_value.exception), "Withdrawal amount must be positive")
 
     def test_transfer_with_negative_value(self):
